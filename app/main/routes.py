@@ -19,7 +19,12 @@ def index():
              Post(body='my third post!', user_id=3, language='EN'),
              Post(body='my fourth post!', user_id=1, language='EN'),
              Post(body='my fifth post!', user_id=2, language='EN')]
-    return render_template('index.html', title=_('Home'), posts=posts)
+    return render_template(
+        'index.html',
+        title=_('Home'),
+        posts=posts,
+        enumerate=enumerate,
+    )
 
 
 @bp.route('/explore')
